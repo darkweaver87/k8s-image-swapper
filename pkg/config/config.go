@@ -31,11 +31,12 @@ type Config struct {
 
 	ListenAddress string
 
-	DryRun          bool   `yaml:"dryRun"`
-	ImageSwapPolicy string `yaml:"imageSwapPolicy" validate:"oneof=always exists"`
-	ImageCopyPolicy string `yaml:"imageCopyPolicy" validate:"oneof=delayed immediate force"`
-	Source          Source `yaml:"source"`
-	Target          Target `yaml:"target"`
+	DryRun               bool              `yaml:"dryRun"`
+	ImageSwapPolicy      string            `yaml:"imageSwapPolicy" validate:"oneof=always exists"`
+	ImageCopyPolicy      string            `yaml:"imageCopyPolicy" validate:"oneof=delayed immediate force"`
+	Source               Source            `yaml:"source"`
+	Target               Target            `yaml:"target"`
+	RepositoryCustomTags map[string]string `yaml:"repositoryCustomTags"`
 
 	TLSCertFile string
 	TLSKeyFile  string
